@@ -6,7 +6,7 @@ By Alexander Nazimov
 ## Introduction 
 
 ```python
-print("Hi, my name is Alex and this is my first Pet-progect since 
+print("Hi, my name is Alex and this is my first Pet-progect since /
 I've started learning the Python language.")
 ```
  
