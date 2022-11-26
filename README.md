@@ -1,7 +1,9 @@
 ![Document_Manager.png](img/Document_Manager.png)
 
 By Alexander Nazimov
-# Introduction 
+
+
+## Introduction 
 
 ```python
 print("Hi, my name is Alex and this is my first Pet-progect since I've started learning the Python language.")
@@ -32,9 +34,12 @@ The list of implemented functions is presented below:
     m - the command moves the document to another required shelf shelf
     h - the command will open the list of available commands again,
     exit - the command will terminate the program.
-"""
+    """
 ```
 
 I plan in the future to add the ability to save the process as JSON or otherwise to be able to use the program not only while the console is active.
 
 And also I want to transfer all the functionality of the program to a web application using the Django framework and Front-end elements for even more convenient work with the document manager.
+
+## Contacts
+If you have any ideas on how to improve the functionality of the program, then you can contact me via email nasimov.alexander@gmail.com
