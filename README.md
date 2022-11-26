@@ -19,7 +19,7 @@ At the moment, the program is a set of functions that can be used in the console
 The essence of this program is that you have a set of various document parameters, such as type, number, title, number of pages, etc., as well as the ability to create various shelves that will be named according to the type of document.
 The document is saved to a list of dictionaries, which will store all the information in the future, but so far only while the program itself is active.
 
-## But my plans for this project are huge!
+### **But my plans for this project are huge!**
 
 Now the program is implemented as a set of functions and commands that must be entered into the console.
 The list of implemented functions is presented below:
