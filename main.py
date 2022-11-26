@@ -158,7 +158,7 @@ def move_body(type_doc, type_doc_old, number_doc):
 
 helper = input("Do you need a list of available features? (Y/N): ")
 if helper.lower() == "y":
-    print(HELP)
+    print("The list of commands: \n", HELP)
 
 while True:
     command = input("Enter command: ").lower()
@@ -181,7 +181,7 @@ while True:
         print()
         move()
     elif command == "h":
-        print(HELP)
+        print("The list of commands: \n", HELP)
     elif command == "exit":
         exit()
     else:
