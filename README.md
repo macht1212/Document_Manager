@@ -4,15 +4,8 @@ By Alexander Nazimov
 
 
 ## Introduction 
-
-```python
-print(
-    """Hi, my name is Alex and this is my first Pet-progect 
-    since I've started learning the Python language.
-    """)
-```
  
-I started building my own document manager to practice my programming skills.
+I've started building my own document manager to practice my programming skills.
 
 At the moment, the program is a set of functions that can be used in the console and only while the console is active.
 
