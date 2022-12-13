@@ -34,6 +34,7 @@ The list of implemented functions is presented below:
 ```
 
 I plan in the future to add the ability to save the process as JSON or otherwise to be able to use the program not only while the console is active.
+Or use some kind of DBs like SQL or NoSQL (I've not decided yet which DB will works). 
 
 And also I want to transfer all the functionality of the program to a web application using the Django framework and Front-end elements for even more convenient work with the document manager.
 
