@@ -1,7 +1,7 @@
 from Function import *
 from data import *
 
-#qqq
+# В данной версии попробую сделать более юзабельный пользовательский интерфейс на основе встроенной библиотеки Tkinter 
 
 
 helper = input("Do you need a list of available features? (Y/N): ")
