@@ -1,13 +1,15 @@
 from data import *
+from main import *
+import tkinter
 
 
-def people():
+def people(event):
     """ This function helps to find a person with his document"""
 
-    number_doc = input("Enter document number: ")
+    number_doc = ppl.get()
 
-    for i, el in enumerate(documents):
-        docs_arr = list(documents[i].items())
+    for docs in documents:
+        docs_arr = list(docs.items())
         number = docs_arr[1][1]
         if number == number_doc in docs_arr[1][1]:
             print(f"The owner of the document with the number {number_doc}: {docs_arr[2][1]}")
@@ -17,19 +19,19 @@ def people():
     print('\n')
 
 
-def shelf():
-    """This function shows name of directory of document"""
+# def shelf():
+#     """This function shows name of directory of document"""
 
-    number_doc = input("Enter document number: ")
+#     number_doc = input("Enter document number: ")
 
-    for i, el in enumerate(directories):
-        list(directories.items())
-        if number_doc in list(directories.items())[i][1]:
-            print(f"Document with number {number_doc} is on the shelf {list(directories.items())[i][0]}")
-            break
-    else:
-        print("Document with this number does not exist!")
-    print('\n')
+#     for i, el in enumerate(directories):
+#         list(directories.items())
+#         if number_doc in list(directories.items())[i][1]:
+#             print(f"Document with number {number_doc} is on the shelf {list(directories.items())[i][0]}")
+#             break
+#     else:
+#         print("Document with this number does not exist!")
+#     print('\n')
 
 
 def list_doc():
@@ -39,27 +41,19 @@ def list_doc():
         print('Data is empty! Create somthing with command "a".')
     else:
         for docs in documents:
-            for i, el in enumerate(directories):
-                list(directories.items())
-                if docs['number'] in list(directories.items())[i][1]:
-                    print(f"Document type: {docs['type']}, document number: {docs['number']}, owner name: {docs['name']},"
-                        f" document is on the shelf:  {list(directories.items())[i][0]}")
+            print(f"Document type: {docs['type']}, document number: {docs['number']}, owner name: {docs['name']}")
     print('\n')
 
 
 def add():
     """This function adds new information to documents and directories"""
 
-    name = input("Enter owner name: ")
-    type_doc = input("Enter document type: ")
-    number_doc = input("Enter document number: ")
+    # name = 
+    # type_doc = 
+    # number_doc = 
 
     dict_new = {"type": type_doc.lower(), "number": number_doc, "name": name}
     documents.append(dict_new)
-    if type_doc in directories.keys():
-        directories[type_doc.lower()].append(number_doc)
-    else:
-        directories[type_doc.lower()] = [number_doc]
     print("Done!")
     print('\n')
 
@@ -67,75 +61,75 @@ def add():
 def delete():
     """This function removes all information from documents and directories"""
 
-    number_doc = input("Enter document number: ")
+    # number_doc = 
 
-    for i, el in enumerate(documents):
-        docs_arr = list(documents[i].items())
+    for doc in documents:
+        docs_arr = list(doc.items())
         if number_doc == docs_arr[1][1]:
-            documents.remove(documents[i])
+            documents.remove(doc)
             print(f"All information about document number {number_doc} has been removed.")
             break
     else:
         print("Document with this number does not exist!")
         print('\n')
-    for key, value in directories.items():
-        if number_doc in value:
-            directories[key].remove(number_doc)
-            if directories[key] is None:
-                directories[key] = []
-                break
-            else:
-                pass
+    # for key, value in directories.items():
+    #     if number_doc in value:
+    #         directories[key].remove(number_doc)
+    #         if directories[key] is None:
+    #             directories[key] = []
+    #             break
+    #         else:
+    #             pass
 
 
-def add_shelf():
-    """This function adds new shelf to directories with empty array"""
+# def add_shelf():
+#     """This function adds new shelf to directories with empty array"""
 
-    type_doc = input("Enter document type: ")
+#     type_doc = input("Enter document type: ")
 
-    if type_doc not in directories:
-        directories[type_doc.lower()] = []
-        print(f"Shelf named {type_doc} added!")
-    else:
-        print("The shelf with the same name already exists.")
-    print('\n')
-
-
-def move():
-    """This function move document from previous directory to new (main func)"""
-    type_doc = input("Enter a name for the new shelf: ").lower()
-    type_doc_old = input("Enter the name of the current shelf: ").lower()
-    number_doc = input("Enter document number: ")
-
-    if type_doc in directories.keys():
-        if type_doc_old in directories.keys():
-            for value in directories.values():
-                if number_doc in value:
-                    move_body(type_doc, type_doc_old, number_doc)
-                    break
-            else:
-                print("Document with this number does not exist!")
-        else:
-            print("Shelf with this name does not exist!")
-    else:
-        print("Shelf with this name does not exist!")
-
-    print('\n')
+#     if type_doc not in directories:
+#         directories[type_doc.lower()] = []
+#         print(f"Shelf named {type_doc} added!")
+#     else:
+#         print("The shelf with the same name already exists.")
+#     print('\n')
 
 
-def move_body(type_doc, type_doc_old, number_doc):
-    """This function move document from previous directory to new (body func)"""
+# def move():
+#     """This function move document from previous directory to new (main func)"""
+#     type_doc = input("Enter a name for the new shelf: ").lower()
+#     type_doc_old = input("Enter the name of the current shelf: ").lower()
+#     number_doc = input("Enter document number: ")
 
-    if number_doc in directories[type_doc_old]:
-        directories[type_doc_old].remove(number_doc)
-        if directories[type_doc_old] is None:
-            directories[type_doc_old] = []
-        else:
-            pass
-        for key in directories.keys():
-            if key == type_doc:
-                directories[key].append(number_doc)
-    else:
-        print(f"Document with number {number_doc} is not on the shelf {type_doc_old}")
+#     if type_doc in directories.keys():
+#         if type_doc_old in directories.keys():
+#             for value in directories.values():
+#                 if number_doc in value:
+#                     move_body(type_doc, type_doc_old, number_doc)
+#                     break
+#             else:
+#                 print("Document with this number does not exist!")
+#         else:
+#             print("Shelf with this name does not exist!")
+#     else:
+#         print("Shelf with this name does not exist!")
 
-    print('\n')
+#     print('\n')
+
+
+# def move_body(type_doc, type_doc_old, number_doc):
+#     """This function move document from previous directory to new (body func)"""
+
+#     if number_doc in directories[type_doc_old]:
+#         directories[type_doc_old].remove(number_doc)
+#         if directories[type_doc_old] is None:
+#             directories[type_doc_old] = []
+#         else:
+#             pass
+#         for key in directories.keys():
+#             if key == type_doc:
+#                 directories[key].append(number_doc)
+#     else:
+#         print(f"Document with number {number_doc} is not on the shelf {type_doc_old}")
+
+#     print('\n')
