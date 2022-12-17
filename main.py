@@ -1,8 +1,6 @@
 from Function import *
 from data import *
 
-#qqq
-
 
 helper = input("Do you need a list of available features? (Y/N): ")
 if helper.lower() == "y":
